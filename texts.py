@@ -1,7 +1,7 @@
 import random
-import string
+from typing import List, Optional
 
-anatel=[
+_ANATEL_TEXTS=[
     "SERVICO DE RADIODIFUSAO EH DEFINIDO COMO UM SERVICO DE RADIOCOMUNICACAO CUJAS EMISSOES ESTAO DESTINADAS A RECEPCAO DIRETA PELO PUBLICO EM GERAL PT", 
     "A ARCA DE NOE QUE PODE NOS SALVAR DO DILUVIO DE PAPEL EH O MICROFILME, QUE TEM O CONDAO NAO APENAS DE RESOLVER ESTE, MAS TODOS OS PROBLEMAS DE ARQUIVO.", 
     "EH NECESSARIO O USO DE RADIOFAROIS, ESTACOES DE EMBARCACOES E DISPOSITIVOS DE SALVAMENTO PARA SEGURANCA DA NAVEGACAO E SALVAR VIDAS HUMANAS NO MAR PT", 
@@ -41,4 +41,15 @@ anatel=[
 ]
 
 
+def get_random_text(text_list: Optional[List[str]] = _ANATEL_TEXTS) -> str:
+    """
+    Returns a random text from the given list of texts.
+
+    Parameters:
+    text_list (List[str], optional): A list of texts to choose from. If not provided, the default list _ANATEL_TEXTS will be used.
+
+    Returns:
+    str: A randomly selected text from the list.
+    """
+    return random.choice(text_list)
 
